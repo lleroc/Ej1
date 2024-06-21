@@ -4,7 +4,8 @@ create table
         nombre varchar(50),
         precio decimal(10, 2),
         stock int
-    )
+    );
+
 create table
     Clientes (
         id int AUTO_INCREMENT primary key,
@@ -12,7 +13,8 @@ create table
         apellido varchar(50),
         email varchar(100),
         telefono varchar(20)
-    )
+    );
+
 create table
     Ventas (
         id int AUTO_INCREMENT primary key,
@@ -20,7 +22,8 @@ create table
         cliente_id int,
         total decimal(10, 2),
         foreign key (cliente_id) references Cliente (id)
-    )
+    );
+
 create table
     VentasDetalle (
         id int AUTO_INCREMENT primary key,
@@ -30,4 +33,4 @@ create table
         precio decimal(10, 2),
         foreign key (venta_id) references Venta (id),
         foreign key (producto_id) references Producto (id)
-    )
+    );
