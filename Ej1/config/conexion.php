@@ -17,5 +17,13 @@ class Clase_Conectar
         if ($this->conexion == 0) die("error al conectar con mysql");
         $this->db = mysqli_select_db($this->conexion, $this->base);
         if ($this->db == 0) die("error al conectar con la base de datos");
+        return $this->conexion;
     }
 }
+/*
+Angular
+
+Backend  => PHP
+FrontEnd => PHP - Html - CSS - Bootstrap - Javascript - Jquery
+
+*/
