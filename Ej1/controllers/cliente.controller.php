@@ -4,6 +4,11 @@ require_once('../models/cliente.model.php');
 $cliente = new Clase_Cliente();
 
 switch ($_GET['op']) {
+    case "probar":
+        $datos = array();
+        $datos = $cliente->probar();
+        echo json_encode($datos);
+        break;
     case "todos":
         $datos = array();
         $datos = $cliente->todos();
@@ -20,13 +25,16 @@ switch ($_GET['op']) {
         break;
 
     case "insertar":
+
         // `nombre`, `apellido`, `email`, `telefono`
         $nombre = $_POST["nombre"];
         $apellido = $_POST["apellido"];
         $email = $_POST["email"];
         $telefono = $_POST["telefono"];
         $datos = array();
+
         $datos = $cliente->insertar($nombre, $apellido, $email, $telefono);
+
         echo json_encode($datos);
         break;
     case "actualizar":
