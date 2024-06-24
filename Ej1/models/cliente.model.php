@@ -2,7 +2,6 @@
 require_once('../config/conexion.php');
 class Clase_Cliente
 {
-
     public function probar()
     {
         $con = new Clase_Conectar();

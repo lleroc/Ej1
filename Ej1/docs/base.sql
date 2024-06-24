@@ -34,3 +34,27 @@ create table
         foreign key (venta_id) references Venta (id),
         foreign key (producto_id) references Producto (id)
     );
+
+CREATE TABLE
+    `usuarios` (
+        `UsuarioId` int (11) NOT NULL,
+        `Nombre` text NOT NULL,
+        `correo` text NOT NULL,
+        `password` text NOT NULL
+    ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+
+--
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios` ADD PRIMARY KEY (`UsuarioId`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios` MODIFY `UsuarioId` int (11) NOT NULL AUTO_INCREMENT,
+AUTO_INCREMENT = 2;
+
+COMMIT;
