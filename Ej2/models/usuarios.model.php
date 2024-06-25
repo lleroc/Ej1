@@ -3,7 +3,8 @@
 require_once('../config/conexion.php');
 class Clase_Usuarios
 {
-    public function todos()
+
+    public function todos()  ///select * from usuarios;
     {
         $con = new Clase_Conectar();
         $con = $con->Procedimiento_Conectar();
@@ -12,7 +13,7 @@ class Clase_Usuarios
         $con->close();
         return $todos;
     }
-    public function uno($UsuarioId)
+    public function uno($UsuarioId) //select * from usuarios where UsuarioId=$UsuarioId;
     {
         $con = new Clase_Conectar();
         $con = $con->Procedimiento_Conectar();
