@@ -3,14 +3,20 @@
 require_once('../config/conexion.php');
 class Clase_Usuarios
 {
-
+    //TODO: procedimiento para obtener todos los usuarios de la base de datos
     public function todos()  ///select * from usuarios;
     {
+        //instanciar la clase conectar
         $con = new Clase_Conectar();
+        //usar el procedimiento para conectar
         $con = $con->Procedimiento_Conectar();
+        //ejecutar la consulta
         $cadena = "SELECT * FROM `usuarios`";
+        //guardar la consulta en una variable
         $todos = mysqli_query($con, $cadena);
+        //cerrar la conexion
         $con->close();
+        //retornar la consulta
         return $todos;
     }
     public function uno($UsuarioId) //select * from usuarios where UsuarioId=$UsuarioId;
