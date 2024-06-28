@@ -64,11 +64,13 @@ class Clase_Usuarios
         $con->close();
         return $todos;
     }
+
+    //llamar esta consulta desde controlador
     public function login($correo, $password)
     {
         $con = new Clase_Conectar();
         $con = $con->Procedimiento_Conectar();
-        $cadena = "SELECT * FROM `usuarios` WHERE `correo` = '$correo' AND `password`='$password'";
+        $cadena = "SELECT * FROM `usuarios` WHERE `correo` = '$correo' AND `password`='$password' and estado = 1";
         $todos = mysqli_query($con, $cadena);
         $con->close();
         return $todos;
