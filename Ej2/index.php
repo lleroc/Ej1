@@ -54,6 +54,38 @@ $nombre = "Luis";
                         </div>
 
                         <form method="post" action="./controllers/usuarios.controllers.php?op=login">
+                            <?php
+                            if (isset($_GET['op'])) {
+                                switch ($_GET['op']) {
+                                    case '1':
+                            ?>
+                                        <div class="form-group">
+                                            <div class="alert alert-danger">
+                                                El usuario o la contraseña son incorrectos, intente de nuevo
+                                            </div>
+                                        </div>
+                                    <?php
+                                        break;
+                                    case '2':
+                                    ?>
+                                        <div class="form-group">
+                                            <div class="alert alert-danger">
+                                                Complete las carillas
+                                            </div>
+                                        </div>
+                            <?php
+                                }
+                            }
+                            ?>
+
+
+
+
+
+
+
+
+
                             <div class="form-floating mb-3">
                                 <input required type="text" class="form-control" id="correo" name="correo" placeholder="Ingrese su usuario o correo" autofocus />
                                 <label for="email">Usuario o Correo</label>

@@ -64,7 +64,6 @@ class Clase_Usuarios
         $con->close();
         return $todos;
     }
-
     //llamar esta consulta desde controlador
     public function login($correo, $password)
     {
@@ -79,7 +78,7 @@ class Clase_Usuarios
     {
         $con = new Clase_Conectar();
         $con = $con->Procedimiento_Conectar();
-        $cadena = "SELECT * FROM `usuarios` WHERE `correo` = '$correo'";
+        $cadena = "SELECT * FROM `usuarios` WHERE `correo` = '$correo'"; //' or 1=1 --
         $todos = mysqli_query($con, $cadena);
         $con->close();
         return $todos;
@@ -88,7 +87,7 @@ class Clase_Usuarios
     {
         $con = new Clase_Conectar();
         $con = $con->Procedimiento_Conectar();
-        $cadena = "SELECT * FROM `usuarios` WHERE `correo` = '?' AND `password`='?' ";
+        $cadena = "SELECT * FROM `usuarios` WHERE `correo`=? AND `password`=?";
         $stmt = $con->prepare($cadena);
         $stmt->bind_param('ss', $correo, $password);
         if ($stmt->execute()) {

@@ -29,17 +29,26 @@ switch ($metodo) {
     case "POST":
         if (isset($_GET["op"]) == "login") {
 
-            if (empty($_POST["correo"]) || empty($_POST["contrasenia"])) {
+            if (empty(trim($_POST["correo"]))  || empty(trim($_POST["contrasenia"]))) {
                 header('Location: ../index.php?op=2');
                 exit();
             }
             $correo = $_POST["correo"];
+
+            //123
             $contrasena = $_POST["contrasenia"];
-            $login = $usuario->login($correo, $contrasena);
+
+            $login = $usuario->loginParametros($correo, $contrasena);
             $res = mysqli_fetch_assoc($login);
             if ($res) {
-                header('Location: ../views/dashboard.php');
-                exit();
+                //202cb962ac59075b964b07152d234b70
+                if ($res['password'] == $contrasena) {
+                    header('Location: ../views/dashboard.php');
+                    exit();
+                } else {
+                    header('Location: ../index.php?op=3');
+                    exit();
+                }
             } else {
                 header('Location: ../index.php?op=1');
                 exit();
