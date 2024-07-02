@@ -11,7 +11,7 @@ class Clase_Usuarios
         //usar el procedimiento para conectar
         $con = $con->Procedimiento_Conectar();
         //ejecutar la consulta
-        $cadena = "SELECT * FROM `usuarios`";
+        $cadena = "SELECT usuarios.`UsuarioId`, usuarios.`Nombre`, usuarios.correo, usuarios.estado, GROUP_CONCAT(roles.Detalle SEPARATOR ',') as rol FROM `usuarios` INNER JOIN usuarios_roles on usuarios.UsuarioId = usuarios_roles.UsuarioId INNER JOIN roles on usuarios_roles.RolesId = roles.RolesId GROUP by usuarios.`UsuarioId`, usuarios.`Nombre`, usuarios.correo, usuarios.estado";
         //guardar la consulta en una variable
         $todos = mysqli_query($con, $cadena);
         //cerrar la conexion
@@ -23,7 +23,7 @@ class Clase_Usuarios
     {
         $con = new Clase_Conectar();
         $con = $con->Procedimiento_Conectar();
-        $cadena = "SELECT * FROM `usuarios` where UsuarioId=$UsuarioId";
+        $cadena = "SELECT usuarios.`UsuarioId`, usuarios.`Nombre`, usuarios.correo, usuarios.estado, GROUP_CONCAT(roles.Detalle SEPARATOR ',') as rol FROM `usuarios` INNER JOIN usuarios_roles on usuarios.UsuarioId = usuarios_roles.UsuarioId INNER JOIN roles on usuarios_roles.RolesId = roles.RolesId GROUP by usuarios.`UsuarioId`, usuarios.`Nombre`, usuarios.correo, usuarios.estado where UsuarioId=$UsuarioId";
         $todos = mysqli_query($con, $cadena);
         $con->close();
         return $todos;
