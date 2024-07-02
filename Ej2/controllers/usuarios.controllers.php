@@ -59,6 +59,7 @@ switch ($metodo) {
                 $insetar = array();
                 $insetar = $usuario->insertar($datos->Nombre, $datos->correo, $datos->password, $datos->estado);
                 if ($insetar) {
+                    //echo "Se inserto correctamente";
                     echo json_encode(array("message" => "Se inserto correctamente"));
                 } else {
                     echo json_encode(array("message" => "Error, no se inserto"));

@@ -115,8 +115,23 @@
             <!-- Recent Sales Start -->
             <div class='container-fluid pt-4 px-4'>
                 <div class='d-flex align-items-center justify-content-between mb-4'>
-                    <br>
-                    <h6 class='mb-0'> </h6>
+
+                    <h6 class='mb-0'> Lista de usuarios </h6>
+
+                    <table class="table table-bordered table-striped table-hover table-responsive">
+                        <thead class="table-light">
+                            <tr>
+                                <th>#</th>
+                                <th>Nombre</th>
+                                <th>Correo</th>
+                                <th>Estado</th>
+                                <th>Rol</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cuerpousuarios"></tbody>
+
+                    </table>
                     <!-- aqui estaban los botones-->
 
                 </div>
@@ -144,11 +159,7 @@
 
     <!-- JavaScript Libraries -->
     <?php require_once('./html/scripts.php') ?>
-
-
-    <script src='../../public/lib/calendar/lib/main.js'></script>
-    <script src='../../public/lib/calendar/lib/locales/es.js'></script>
-
+    <script src="./dashboard.js"></script>
 </body>
 
 </html>
