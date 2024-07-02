@@ -129,7 +129,9 @@
                                 <th>Acciones</th>
                             </tr>
                         </thead>
-                        <tbody id="cuerpousuarios"></tbody>
+                        <tbody id="cuerpousuarios">
+
+                        </tbody>
 
                     </table>
                     <!-- aqui estaban los botones-->
