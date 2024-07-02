@@ -1,7 +1,7 @@
 <?php
 // php es un lenguaje de programacion interpretado, por lo que no se compila, se ejecuta en el servidor
 require_once('../config/conexion.php');
-class Clase_Roles
+class Clase_Usuarios_Roles
 {
     //TODO: procedimiento para obtener todos los usuarios de la base de datos
     public function todos()  ///select * from usuarios;
