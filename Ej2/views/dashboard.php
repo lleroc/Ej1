@@ -114,9 +114,16 @@
 
             <!-- Recent Sales Start -->
             <div class='container-fluid pt-4 px-4'>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalUsuario">
+                    Nuevo Usuario
+                </button>
                 <div class='d-flex align-items-center justify-content-between mb-4'>
 
+
                     <h6 class='mb-0'> Lista de usuarios </h6>
+                    <br>
+
+
 
                     <table class="table table-bordered table-striped table-hover table-responsive">
                         <thead class="table-light">
@@ -157,11 +164,70 @@
         <!-- Back to Top -->
         <a href='#' class='btn btn-lg btn-primary btn-lg-square back-to-top'><i class='bi bi-arrow-up'></i></a>
     </div>
+    <!-- aqui van los modales -->
+
+
+
+    <div class="modal fade" id="modalUsuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Nuevo Usuario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="Nombre">Nombre</label>
+                            <input type="text" name="Nombre" id="Nombre" placeholder="Ingrese su nombre" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="correo">Correo</label>
+                            <input type="email" name="correo" id="correo" placeholder="Ingrese su correo" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Contrsenia</label>
+                            <input type="password" name="password" id="password" placeholder="Ingrese su contrasenia" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="estado">Estado</label>
+                            <input type="checkbox" name="estado" id="estado" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="RolesId">Rol</label>
+                            <select name="RolesId" id="RolesId" class="form-control" required>
+                                <option value="">Seleccione un rol</option>
+                                <!-- Aqui van los roles -->
+                                <option value="1">Administrador</option>
+                                <option value="2">Usuario</option>
+                                <option value="3">Editor</option>
+                            </select>
+                        </div>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
 
 
     <!-- JavaScript Libraries -->
     <?php require_once('./html/scripts.php') ?>
     <script src="./dashboard.js"></script>
+
+
+
+
+
+
 </body>
 
 </html>

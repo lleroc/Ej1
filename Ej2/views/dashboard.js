@@ -15,18 +15,21 @@ var cargaTabla = () => {
 
   //$.get(url, parametros, funcion);
   //url = ../controllers/usuarios.controllers.php
-  $.get("../controllers/usuarios.controllers.php", (variosusuarios) => {
-    console.log(variosusuarios);
-
+  $.get("../controllers/usuarios.controllers.php", (listausuarios) => {
+    console.log(listausuarios);
     //$.each(listadedatos, funcion)
     //$.each(variosusuarios,( indice, valor )=>{})
-    $.each(variosusuarios, (indice, unusuario) => {
+    $.each(listausuarios, (indice, unusuario) => {
       html += `
             <tr>
                 <td>${indice + 1}</td>
                 <td>${unusuario.Nombre}</td>
                 <td>${unusuario.correo}</td>
-                <td>${unusuario.estado == 1 ? "Activo" : "Bloqueado"}</td>
+                <td>${
+                  unusuario.estado == 1
+                    ? "<p class='bg-success text-white text-center'>Activo</p>"
+                    : "<p class='bg-danger text-white text-center'>Bloqueado</p>"
+                }</td>
                 <td>${unusuario.rol}</td>
             <td>
 <button class="btn btn-primary">Editar</button>
